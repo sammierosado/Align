@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+
+.App {
+  text-align: center;
+}
+
+.navBar {
+  /* background-image: url(/purplesky.png); */
+  background-color: #591E23;
+  /* font-family: 'Yanone Kaffeesatz', sans-serif; */
+  font-family: "Cuprum", sans-serif;
+  color: #D94E67;
+  font-size: 1em;
+  padding: 20px;
+  text-align: center;
+  margin: 0;
+}
+
+.navBar div {
+  display: inline;
+}
+
+.navBar a {
+  /* font-family: 'Sahitya', serif; */
+  font-family: "Fondamento", cursive;
+  color: #D94E67;
+  font-size: 1.5em;
+  text-decoration: none;
+  
+}
+
+.navBar a:hover,
+.navBar a.active {
+  background-color: #ddd;
+  color: black;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:  #A68572;
+  text-align: center;
+  font-family: "Cuprum", sans-serif;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+.footer div { 
+  display: inline;
+}
+.footer a {
+  color: #73503C;
+  padding-left: 20px;
+
+}
+
+.homepageTitle {
+  text-align: center;
+  font-size: 2em;
+  font-family: "Sahitya", serif;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+.zodiacContainer {
+  margin-left: 20px;
+  background-color: powderblue;
+  margin-right: auto;
+  display: grid;
+  justify-content: space-evenly;
+  grid-template-columns:  1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows:  1fr 1fr;
+}
+
+.zodiacContainer a{
+  border: red solid 1px;
+}
+
+@media (min-width: 600px) {
+}
+
+@media (min-width: 800px) {
+}
