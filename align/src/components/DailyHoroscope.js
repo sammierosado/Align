@@ -10,24 +10,28 @@ function DailyHoroscope() {
   const getHoroscopeData = () => {
     const URL = "https://aztro.sameerkumar.website/?sign=gemini&day=today";
     fetch(URL, {
-    method: "POST",
-  })
-    .then((response) => response.json())
-    .then((json) => {
-      setSunSignHoro(json);
-      setLoading(true);
-    });
-  }
+      method: "POST",
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        setSunSignHoro(json);
+        setLoading(true);
+      });
+  };
 
   useEffect(() => {
-   getHoroscopeData();
+    getHoroscopeData();
   });
   return (
-    <div>
-      <div className="horoscopeHeader">Gemini Horoscope</div>
+    <>
+      <div className="horoscopeHeader">
+        <div className="">Gemini Horoscope   {sunSignHoro.date_range}</div>
+      </div>
       <div className="horoscopePage">
-        <div>{sunSignHoro.current_date}</div>
-        <div>{sunSignHoro.description}</div>
+        <div className="horoscopeDescription">
+         <strong>{sunSignHoro.current_date}:</strong> &nbsp;
+          {sunSignHoro.description}
+        </div>
         {sunSignHoro.compatibility}
         {sunSignHoro.lucky_number}
         {sunSignHoro.lucky_time}
@@ -36,7 +40,7 @@ function DailyHoroscope() {
         {sunSignHoro.mood}
         <PuffLoader size={150} color={"#123abc"} />
       </div>
-    </div>
+    </>
   );
 }
 export default DailyHoroscope;

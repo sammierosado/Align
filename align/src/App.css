@@ -12,10 +12,9 @@ body {
   /* background-image: url(/purplesky.png); */
   /* font-family: 'Yanone Kaffeesatz', sans-serif; */
   font-family: "Cuprum", sans-serif;
-  color: #D94E67;
   font-size: 1em;
   padding: 20px;
-  text-align: center;
+  text-align: right;
   margin: 0;
 }
 
@@ -24,12 +23,12 @@ body {
 }
 
 .navBar a {
-  /* font-family: 'Sahitya', serif; */
-  font-family: "Fondamento", cursive;
-  color: #D94E67;
+  font-family: "Sahitya", serif;
+  color: black;
   font-size: 1.5em;
   text-decoration: none;
-  
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .navBar a:hover,
@@ -43,20 +42,23 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color:  #A68572;
+  background-color: #e0e0e0;
   text-align: center;
   font-family: "Cuprum", sans-serif;
   padding-bottom: 50px;
   padding-top: 50px;
+  box-shadow: 5px 10px;
 }
 
-.footer div { 
+.footer div {
   display: inline;
 }
 .footer a {
-  color: #73503C;
+  color: black;
   padding-left: 20px;
-
+  font-family: "Cuprum", sans-serif;
+  
+ 
 }
 
 .homepageTitle {
@@ -68,23 +70,25 @@ body {
   padding-bottom: 20px;
 }
 
-
 .zodiacContainer {
   margin-left: 20px;
-  background-color: powderblue;
   margin-right: auto;
   display: grid;
   justify-content: space-evenly;
-  grid-template-columns:  1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows:  1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
-.zodiacContainer a{
-  border: red solid 1px;
+.zodiacContainer a {
+  font-family: "Sahitya", serif;
+  font-size: 1.2em;
+  color: black;
+  font-size: bold;
+  text-decoration: none;
 }
 
 .horoscopeHeader {
-  font-family: "Cuprum", sans-serif;
+  font-family: "Sahitya", serif;
   background-color: purple;
   padding-top: 30px;
   margin: 0;
@@ -94,10 +98,20 @@ body {
   text-shadow: -1px 0 black, 0 3px black, 1px 0 black, 0 -1px black;
 }
 
+.horoscopeHeader div {
+  margin-left: 20px;
+}
+
 .horoscopePage {
   margin-left: 20px;
   padding: 20px;
-  font-weight: bold;
+  font-family: "Sahitya", serif;
+  font-size: 1.5em;
+}
+
+.horoscopeDescription {
+  width: 600px;
+  border-top: 1px dotted grey;
 }
 
 @media (min-width: 600px) {

@@ -9,13 +9,13 @@ function Footer() {
   <Link to="/">AlignTheStars.com</Link>
   </div>
     <div>
-    <Link to="/about-us">About&#x25BE;</Link>
+    <Link to="/about-us">About</Link>
     </div>
     <div>
-    <Link to="/contact-us">Contact&#x25BE;</Link>
+    <Link to="/contact-us">Contact</Link>
     </div>
     <div>
-    <Link to="/">Zodiac Signs&#x25BE;</Link>
+    <Link to="/">Zodiac Signs</Link>
     </div>
 
   </div>
