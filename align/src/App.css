@@ -10,12 +10,13 @@ body {
 
 .navBar {
   /* background-image: url(/purplesky.png); */
-  /* font-family: 'Yanone Kaffeesatz', sans-serif; */
   font-family: "Cuprum", sans-serif;
   font-size: 1em;
   padding: 20px;
-  text-align: right;
   margin: 0;
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end;
 }
 
 .navBar div {
@@ -42,7 +43,7 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #e0e0e0;
+  background-color: #737495;
   text-align: center;
   font-family: "Cuprum", sans-serif;
   padding-bottom: 50px;
@@ -53,12 +54,12 @@ body {
 .footer div {
   display: inline;
 }
+
 .footer a {
   color: black;
   padding-left: 20px;
   font-family: "Cuprum", sans-serif;
-  
- 
+  text-decoration: none;
 }
 
 .homepageTitle {
@@ -71,12 +72,18 @@ body {
 }
 
 .zodiacContainer {
-  margin-left: 20px;
-  margin-right: auto;
+  margin-left: 8%;
+  margin-right: 8%;
   display: grid;
   justify-content: space-evenly;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+}
+
+.zodiacContainer a:hover {
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
 }
 
 .zodiacContainer a {
@@ -89,7 +96,7 @@ body {
 
 .horoscopeHeader {
   font-family: "Sahitya", serif;
-  background-color: purple;
+  background-color: #737495;
   padding-top: 30px;
   margin: 0;
   padding-bottom: 30px;
@@ -99,18 +106,18 @@ body {
 }
 
 .horoscopeHeader div {
-  margin-left: 20px;
+  margin-left: 10%;
 }
 
 .horoscopePage {
-  margin-left: 20px;
+  margin-left: 10%;
   padding: 20px;
   font-family: "Sahitya", serif;
   font-size: 1.5em;
 }
 
 .horoscopeDescription {
-  width: 600px;
+  width: 50%;
   border-top: 1px dotted grey;
 }
 

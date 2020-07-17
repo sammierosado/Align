@@ -32,13 +32,12 @@ function DailyHoroscope() {
          <strong>{sunSignHoro.current_date}:</strong> &nbsp;
           {sunSignHoro.description}
         </div>
-        {sunSignHoro.compatibility}
-        {sunSignHoro.lucky_number}
-        {sunSignHoro.lucky_time}
-        {sunSignHoro.color}
-        {sunSignHoro.date_range}
-        {sunSignHoro.mood}
-        <PuffLoader size={150} color={"#123abc"} />
+        Compatibility:&nbsp; {sunSignHoro.compatibility}
+        Lucky Number:&nbsp;{sunSignHoro.lucky_number}
+        Lucky Time:&nbsp;{sunSignHoro.lucky_time}
+        Color:&nbsp;{sunSignHoro.color}
+        Mood:&nbsp;{sunSignHoro.mood}
+        <PuffLoader size={150} color={"#F17D80"} />
       </div>
     </>
   );
