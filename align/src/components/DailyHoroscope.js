@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import "../App.css";
 import { PuffLoader } from "react-spinners";
 
-function DailyHoroscope() {
+function DailyHoroscope({sun_sign}) {
   const [sunSignHoro, setSunSignHoro] = useState({});
   const [loading, setLoading] = useState(false);
 
-  const getHoroscopeData = () => {
-    const URL = "https://aztro.sameerkumar.website/?sign=gemini&day=today";
+  const getHoroscopeData = ({sun_sign}) => {
+    const URL = `https://aztro.sameerkumar.website/?sign=${sun_sign}&day=today`
     fetch(URL, {
       method: "POST",
     })
@@ -20,23 +20,27 @@ function DailyHoroscope() {
   };
 
   useEffect(() => {
-    getHoroscopeData();
+    getHoroscopeData({sun_sign});
   });
   return (
     <>
       <div className="horoscopeHeader">
-        <div className="">Gemini Horoscope   {sunSignHoro.date_range}</div>
+        <div className="">{sun_sign} Horoscope {sunSignHoro.date_range}</div>
       </div>
       <div className="horoscopePage">
         <div className="horoscopeDescription">
-         <strong>{sunSignHoro.current_date}:</strong> &nbsp;
+          <strong>{sunSignHoro.current_date}:</strong> &nbsp;
           {sunSignHoro.description}
         </div>
-        Compatibility:&nbsp; {sunSignHoro.compatibility}
-        Lucky Number:&nbsp;{sunSignHoro.lucky_number}
-        Lucky Time:&nbsp;{sunSignHoro.lucky_time}
-        Color:&nbsp;{sunSignHoro.color}
-        Mood:&nbsp;{sunSignHoro.mood}
+        <div className="horoscopeContainers">
+          <div className="horoscopeItems">Mood:&nbsp;{sunSignHoro.mood}</div>
+          <div className="horoscopeItems">Compatibility:&nbsp; {sunSignHoro.compatibility}</div>
+          <div className="horoscopeItems">Lucky Number:&nbsp;{sunSignHoro.lucky_number}</div>
+          <div className="horoscopeItems">Lucky Time:&nbsp;{sunSignHoro.lucky_time}</div>
+          <div className="horoscopeItems">Color:&nbsp;{sunSignHoro.color}</div>
+        </div>
+      </div>
+      <div>
         <PuffLoader size={150} color={"#F17D80"} />
       </div>
     </>
