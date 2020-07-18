@@ -28,7 +28,7 @@ function DailyHoroscope({ sun_sign }) {
         <div className="horoTitle">{sun_sign} Horoscope</div>
 
         <div class="dropdown">
-          <button class="dropbtn">Change Sign</button>
+          <button class="dropbtn">Change Sign&#x25BE;</button>
           <div class="dropdown-content">
             <a href="/aries-horoscope">Aries</a>
             <a href="/taurus-horoscope">Taurus</a>
@@ -44,21 +44,14 @@ function DailyHoroscope({ sun_sign }) {
             <a href="/pisces-horoscope">Pisces</a>
           </div>
         </div>
-
-        {/* <div className="dd-wrapper">Change Sign&#x25BE;
-          {" "}
-          
-          <div className="dd-header">
-            <div className="dd-header-title">Change Sign</div>
-          </div>
-          <ul className="dd-list">
-            <a href="/aries-horoscope">Aries</a>
-            
-            
-          </ul>
-        </div> */}
       </div>
       <div className="horoscopePage">
+        <div className="changeDay">
+          <a href="">YESTERDAY</a>&#2607;
+          <a href="">TODAY</a>
+          <a href="">TOMORROW</a>
+
+        </div>
         <div className="horoscopeDescription">
           <strong>{sunSignHoro.current_date}:</strong> &nbsp;
           {sunSignHoro.description}
