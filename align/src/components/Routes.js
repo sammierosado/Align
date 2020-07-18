@@ -14,11 +14,6 @@ function Routes() {
       <Route exact path="/contact-us" render={Contact} />
       <Route
         exact
-        path="/daily-horoscope"
-        render={(oldProps) => <DailyHoroscope {...oldProps} />}
-      />
-      <Route
-        exact
         path="/aries-horoscope"
         render={(oldProps) => (
           <DailyHoroscope sun_sign={"aries"} {...oldProps} />

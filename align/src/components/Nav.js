@@ -9,9 +9,6 @@ function Nav() {
   <Link to="/">AlignTheStars.com</Link>
   </div>
     <div>
-    <Link to="/daily-horoscope">Daily Horoscope</Link>
-    </div>
-    <div>
     <Link to="/contact-us">Contact</Link>
     </div>
     <div>

@@ -38,8 +38,6 @@ body {
   color: black;
 }
 
-
-
 .homepageTitle {
   text-align: center;
   font-size: 2em;
@@ -72,19 +70,77 @@ body {
   text-decoration: none;
 }
 
-.horoscopeHeader {
+.horoDate {
   font-family: "Sahitya", serif;
+  font-size: 1.5em;
+  color: pink;
+}
+
+.horoscopeHeader {
   background-color: #737495;
   padding-top: 30px;
   margin: 0;
   padding-bottom: 30px;
-  font-size: 2.5em;
-  color: white;
-  text-shadow: -1px 0 black, 0 3px black, 1px 0 black, 0 -1px black;
+  display: flex;
 }
 
-.horoscopeHeader div {
+.horoTitle {
   margin-left: 10%;
+  font-family: "Sahitya", serif;
+  text-transform: capitalize;
+  font-size: 3em;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.dropbtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-size: 12px;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
 }
 
 .horoscopePage {
@@ -100,17 +156,16 @@ body {
 }
 
 .horoscopeContainers {
-display: flex;
-flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .horoscopeItems {
-  border: #91C5A9 solid 1px;
+  border: #8cd6ae solid 1px;
   border-radius: 5%;
-  background-color: #91C5A9;
+  background-color: #91c5a9;
   margin-right: 1%;
-  padding: .5%;
-
+  padding: 0.5%;
 }
 
 @media (min-width: 600px) {
