@@ -19,10 +19,6 @@ function DailyHoroscope({ sun_sign, date }) {
       });
   };
 
-  const changeDate = ({ sun_sign, date }) => {
-    return (`${sun_sign}-horoscope-${date}`)
-  };
-
   useEffect(() => {
     getHoroscopeData({ sun_sign, date });
   });
@@ -51,9 +47,9 @@ function DailyHoroscope({ sun_sign, date }) {
       </div>
       <div className="horoscopePage">
         <div className="changeDay">
-          <a href="">YESTERDAY</a> |&nbsp;
-          <a href="">&nbsp;TODAY</a>|&nbsp;
-          <a href="">TOMORROW</a>
+          <a href={`/${sun_sign}-horoscope-yesterday`}>YESTERDAY</a> |&nbsp;
+          <a href={`/${sun_sign}-horoscope`}>&nbsp;TODAY</a>|&nbsp;
+          <a href={`/${sun_sign}-horoscope-tomorrow`}>TOMORROW</a>
         </div>
         <div className="horoscopeDescription">
           <strong>{sunSignHoro.current_date}:</strong> &nbsp;
