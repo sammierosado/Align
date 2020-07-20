@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import "../App.css";
 import { PuffLoader } from "react-spinners";
 
-function DailyHoroscope({ sun_sign }) {
+function DailyHoroscope({ sun_sign, date }) {
   const [sunSignHoro, setSunSignHoro] = useState({});
   const [loading, setLoading] = useState(false);
 
-  const getHoroscopeData = ({ sun_sign }) => {
-    const URL = `https://aztro.sameerkumar.website/?sign=${sun_sign}&day=today`;
+  const getHoroscopeData = ({ sun_sign, date }) => {
+    const URL = `https://aztro.sameerkumar.website/?sign=${sun_sign}&day=${date}`;
     fetch(URL, {
       method: "POST",
     })
@@ -19,8 +19,12 @@ function DailyHoroscope({ sun_sign }) {
       });
   };
 
+  const changeDate = ({ sun_sign, date }) => {
+    return (`${sun_sign}-horoscope-${date}`)
+  };
+
   useEffect(() => {
-    getHoroscopeData({ sun_sign });
+    getHoroscopeData({ sun_sign, date });
   });
   return (
     <>
@@ -47,10 +51,9 @@ function DailyHoroscope({ sun_sign }) {
       </div>
       <div className="horoscopePage">
         <div className="changeDay">
-          <a href="">YESTERDAY</a>&#2607;
-          <a href="">TODAY</a>
+          <a href="">YESTERDAY</a> |&nbsp;
+          <a href="">&nbsp;TODAY</a>|&nbsp;
           <a href="">TOMORROW</a>
-
         </div>
         <div className="horoscopeDescription">
           <strong>{sunSignHoro.current_date}:</strong> &nbsp;

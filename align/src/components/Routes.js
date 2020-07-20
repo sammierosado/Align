@@ -16,84 +16,167 @@ function Routes() {
         exact
         path="/aries-horoscope"
         render={(oldProps) => (
-          <DailyHoroscope sun_sign={"aries"} {...oldProps} />
+          <DailyHoroscope sun_sign={"aries"} date={"today"} {...oldProps} />
         )}
       />
       <Route
         exact
         path="/leo-horoscope"
-        render={(oldProps) => <DailyHoroscope sun_sign={"leo"} {...oldProps} />}
+        render={(oldProps) => <DailyHoroscope sun_sign={"leo"} date={"today"} {...oldProps} />}
       />
       <Route
         exact
         path="/cancer-horoscope"
         render={(oldProps) => (
-          <DailyHoroscope sun_sign={"cancer"} {...oldProps} />
+          <DailyHoroscope sun_sign={"cancer"} date={"today"} {...oldProps} />
         )}
       />
       <Route
         exact
         path="/pisces-horoscope"
         render={(oldProps) => (
-          <DailyHoroscope sun_sign={"pisces"} {...oldProps} />
+          <DailyHoroscope sun_sign={"pisces"} date={"today"} {...oldProps} />
         )}
       />
       <Route
         exact
         path="/scorpio-horoscope"
         render={(oldProps) => (
-          <DailyHoroscope sun_sign={"scorpio"} {...oldProps} />
+          <DailyHoroscope sun_sign={"scorpio"} date={"today"} {...oldProps} />
         )}
       />
       <Route
         exact
         path="/taurus-horoscope"
         render={(oldProps) => (
-          <DailyHoroscope sun_sign={"taurus"} {...oldProps} />
+          <DailyHoroscope sun_sign={"taurus"} date={"today"} {...oldProps} />
         )}
       />
       <Route
         exact
         path="/sagittarius-horoscope"
         render={(oldProps) => (
-          <DailyHoroscope sun_sign={"sagittarius"} {...oldProps} />
+          <DailyHoroscope sun_sign={"sagittarius"} date={"today"} {...oldProps} />
         )}
       />
       <Route
         exact
         path="/gemini-horoscope"
         render={(oldProps) => (
-          <DailyHoroscope sun_sign={"gemini"} {...oldProps} />
+          <DailyHoroscope sun_sign={"gemini"} date={"today"} {...oldProps} />
         )}
       />
       <Route
         exact
         path="/virgo-horoscope"
         render={(oldProps) => (
-          <DailyHoroscope sun_sign={"virgo"} {...oldProps} />
+          <DailyHoroscope sun_sign={"virgo"} date={"today"} {...oldProps} />
         )}
       />
       <Route
         exact
         path="/libra-horoscope"
         render={(oldProps) => (
-          <DailyHoroscope sun_sign={"libra"} {...oldProps} />
+          <DailyHoroscope sun_sign={"libra"} date={"today"} {...oldProps} />
         )}
       />
       <Route
         exact
         path="/capricorn-horoscope"
         render={(oldProps) => (
-          <DailyHoroscope sun_sign={"capricorn"} {...oldProps} />
+          <DailyHoroscope sun_sign={"capricorn"} date={"today"} {...oldProps} />
         )}
       />
       <Route
         exact
         path="/aquarius-horoscope"
         render={(oldProps) => (
-          <DailyHoroscope sun_sign={"aquarius"} {...oldProps} />
+          <DailyHoroscope sun_sign={"aquarius"} date={"today"} {...oldProps} />
         )}
       />
+
+<Route
+        exact
+        path="/aries-horoscope-tomorrow"
+        render={(oldProps) => (
+          <DailyHoroscope sun_sign={"aries"} date={"tomorrow"} {...oldProps} />
+        )}
+      />
+      <Route
+        exact
+        path="/leo-horoscope-tomorrow"
+        render={(oldProps) => <DailyHoroscope sun_sign={"leo"} date={"tomorrow"} {...oldProps} />}
+      />
+      <Route
+        exact
+        path="/cancer-horoscope-tomorrow"
+        render={(oldProps) => (
+          <DailyHoroscope sun_sign={"cancer"} date={"tomorrow"} {...oldProps} />
+        )}
+      />
+      <Route
+        exact
+        path="/pisces-horoscope-tomorrow"
+        render={(oldProps) => (
+          <DailyHoroscope sun_sign={"pisces"} date={"tomorrow"} {...oldProps} />
+        )}
+      />
+      <Route
+        exact
+        path="/scorpio-horoscope-tomorrow"
+        render={(oldProps) => (
+          <DailyHoroscope sun_sign={"scorpio"} date={"tomorrow"} {...oldProps} />
+        )}
+      />
+      <Route
+        exact
+        path="/taurus-horoscope-tomorrow"
+        render={(oldProps) => (
+          <DailyHoroscope sun_sign={"taurus"} date={"tomorrow"} {...oldProps} />
+        )}
+      />
+      <Route
+        exact
+        path="/sagittarius-horoscope-tomorrow"
+        render={(oldProps) => (
+          <DailyHoroscope sun_sign={"sagittarius"} date={"tomorrow"} {...oldProps} />
+        )}
+      />
+      <Route
+        exact
+        path="/gemini-horoscope-tomorrow"
+        render={(oldProps) => (
+          <DailyHoroscope sun_sign={"gemini"} date={"tomorrow"} {...oldProps} />
+        )}
+      />
+      <Route
+        exact
+        path="/virgo-horoscope-tomorrow"
+        render={(oldProps) => (
+          <DailyHoroscope sun_sign={"virgo"} date={"tomorrow"} {...oldProps} />
+        )}
+      />
+      <Route
+        exact
+        path="/libra-horoscope-tomorrow"
+        render={(oldProps) => (
+          <DailyHoroscope sun_sign={"libra"} date={"tomorrow"} {...oldProps} />
+        )}
+      />
+      <Route
+        exact
+        path="/capricorn-horoscope-tomorrow"
+        render={(oldProps) => (
+          <DailyHoroscope sun_sign={"capricorn"} date={"tomorrow"} {...oldProps} />
+        )}
+      />
+      <Route
+        exact
+        path="/aquarius-horoscope-tomorrow"
+        render={(oldProps) => (
+          <DailyHoroscope sun_sign={"aquarius"} date={"tomorrow"} {...oldProps} />
+        )}
+        />
       <Route component={Err404} />
     </Switch>
   );
