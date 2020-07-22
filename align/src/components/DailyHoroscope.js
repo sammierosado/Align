@@ -58,18 +58,23 @@ function DailyHoroscope({ sun_sign, date }) {
         <div className="horoscopeContainers">
           <div className="horoscopeItems">Mood:&nbsp;{sunSignHoro.mood}</div>
           <div className="horoscopeItems">
-            Compatibility:&nbsp; {sunSignHoro.compatibility}
-          </div>
-          <div className="horoscopeItems">
             Lucky Number:&nbsp;{sunSignHoro.lucky_number}
           </div>
           <div className="horoscopeItems">
             Lucky Time:&nbsp;{sunSignHoro.lucky_time}
           </div>
           <div className="horoscopeItems">Color:&nbsp;{sunSignHoro.color}</div>
+          <div className="horoscopeItems">
+            Compatibility
+            <div className="horoCompatibility">
+              <img src="/piscesSVG.svg"></img>
+              {sunSignHoro.compatibility}
+            </div>
+          </div>
         </div>
       </div>
       <div>{/* <PuffLoader size={150} color={"#F17D80"} /> */}</div>
+   
     </>
   );
 }

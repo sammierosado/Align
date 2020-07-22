@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   width: auto;
+  overflow: scroll 
 }
 
 .App {
@@ -96,10 +97,9 @@ body {
 
 .changeDay {
   text-decoration: none;
-
 }
 
-.changeDay a{
+.changeDay a {
   color: black;
   font-family: "Sahitya", serif;
   margin-right: 1%;
@@ -126,6 +126,10 @@ body {
   margin: 1%;
   position: relative;
   display: inline-block;
+}
+
+.dropdown button {
+  border: lightgray solid 1px;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -186,6 +190,14 @@ body {
   margin-right: 1%;
   padding: 0.5%;
 }
+
+.horoCompatibility {
+  text-align: center;
+  background-color: white;
+  border: solid grey 1px;
+  border-radius: 5%;
+}
+
 
 @media (min-width: 600px) {
 }

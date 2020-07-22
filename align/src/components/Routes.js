@@ -201,7 +201,7 @@ function Routes() {
           <DailyHoroscope sun_sign={"pisces"} date={"tomorrow"} {...oldProps} />
         )}
       />
-       <Route
+      <Route
         exact
         path="/aries-horoscope-yesterday"
         render={(oldProps) => (
@@ -212,21 +212,33 @@ function Routes() {
         exact
         path="/taurus-horoscope-yesterday"
         render={(oldProps) => (
-          <DailyHoroscope sun_sign={"taurus"} date={"yesterday"} {...oldProps} />
+          <DailyHoroscope
+            sun_sign={"taurus"}
+            date={"yesterday"}
+            {...oldProps}
+          />
         )}
       />
       <Route
         exact
         path="/gemini-horoscope-yesterday"
         render={(oldProps) => (
-          <DailyHoroscope sun_sign={"gemini"} date={"yesterday"} {...oldProps} />
+          <DailyHoroscope
+            sun_sign={"gemini"}
+            date={"yesterday"}
+            {...oldProps}
+          />
         )}
       />
       <Route
         exact
         path="/cancer-horoscope-yesterday"
         render={(oldProps) => (
-          <DailyHoroscope sun_sign={"cancer"} date={"yesterday"} {...oldProps} />
+          <DailyHoroscope
+            sun_sign={"cancer"}
+            date={"yesterday"}
+            {...oldProps}
+          />
         )}
       />
       <Route
@@ -298,10 +310,13 @@ function Routes() {
         exact
         path="/pisces-horoscope-yesterday"
         render={(oldProps) => (
-          <DailyHoroscope sun_sign={"pisces"} date={"yesterday"} {...oldProps} />
+          <DailyHoroscope
+            sun_sign={"pisces"}
+            date={"yesterday"}
+            {...oldProps}
+          />
         )}
       />
-
 
       <Route component={Err404} />
     </Switch>
