@@ -2,79 +2,88 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "../App.css";
 import { PuffLoader } from "react-spinners";
-
-function DailyHoroscope({ sun_sign, date }) {
-  const [sunSignHoro, setSunSignHoro] = useState({});
-  const [loading, setLoading] = useState(false);
-
-  const getHoroscopeData = ({ sun_sign, date }) => {
-    const URL = `https://aztro.sameerkumar.website/?sign=${sun_sign}&day=${date}`;
-    fetch(URL, {
-      method: "POST",
-    })
-      .then((response) => response.json())
-      .then((json) => {
-        setSunSignHoro(json);
-        setLoading(true);
+function DailyHoroscope({ sun_sign, signs, date }) {
+  const [sunSignHoro, setSunSignHoro] = useState([]);
+  const [currentDay, setCurrentDay] = useState("today"); // intializes today as the first state
+  const getHoroscopeData = () => {
+    const urlConst = date.map( // construct url to retrieve data for days in date array
+      (d) => `https://aztro.sameerkumar.website/?sign=${sun_sign}&day=${d}`
+    );
+    Promise.all(
+      urlConst.map((url) =>
+        fetch(url, { method: "POST" }).then((data) => data.json())
+      )
+    )
+      .then((data) => { // structure data to mange days with currentDay states
+        const signHoroDataStructure = data.map((d, i) => ({
+          date: date[i],
+          data: d,
+        }));
+        setSunSignHoro(signHoroDataStructure);
+      })
+      .catch((e) => {
+        console.log(e);
       });
   };
 
   useEffect(() => {
-    getHoroscopeData({ sun_sign, date });
+    getHoroscopeData();
   });
+
+  if (!sunSignHoro.length > 0) {
+    return <PuffLoader />;
+  }
+
+  const horoscopeInfo = sunSignHoro.filter((s) => s.date === currentDay)[0].data; //updates state for day horoscope info
   return (
     <>
+    {/* HEADER */}
       <div className="horoscopeHeader">
         <div className="horoTitle">{sun_sign} Horoscope</div>
-
-        <div class="dropdown">
-          <button class="dropbtn">Change Sign&#x25BE;</button>
-          <div class="dropdown-content">
-            <a href="/aries-horoscope">Aries</a>
-            <a href="/taurus-horoscope">Taurus</a>
-            <a href="/gemini-horoscope">Gemini</a>
-            <a href="/cancer-horoscope">Cancer</a>
-            <a href="/leo-horoscope">Leo</a>
-            <a href="/virgo-horoscope">Virgo</a>
-            <a href="/libra-horoscope">Libra</a>
-            <a href="/scorpio-horoscope">Scorpio</a>
-            <a href="/sagittarius-horoscope">Sagittarius</a>
-            <a href="/capricorn-horoscope">Capricorn</a>
-            <a href="/aquarius-horoscope">Aquarius</a>
-            <a href="/pisces-horoscope">Pisces</a>
+        <div className="dropdown">
+          <button className="dropbtn">Change Sign&#x25BE;</button>
+          <div className="dropdown-content">
+            {signs.map((h, i) => (
+              <a key={h.sign + i} href={`/${h.url}`}>
+                {h.sign}
+              </a>
+            ))}
           </div>
         </div>
       </div>
+
+    {/*INFO*/}
       <div className="horoscopePage">
         <div className="changeDay">
-          <a href={`/${sun_sign}-horoscope-yesterday`}>YESTERDAY</a> |&nbsp;
-          <a href={`/${sun_sign}-horoscope`}>&nbsp;TODAY</a>|&nbsp;
-          <a href={`/${sun_sign}-horoscope-tomorrow`}>TOMORROW</a>
+          {date.map((d, i) => (
+            <button
+              key={d + i}
+              onClick={() => setCurrentDay(d)}
+              className={d !== currentDay ? 'date-button button-active':'date-button'}
+            >
+              {d}
+            </button>
+          ))}
         </div>
         <div className="horoscopeDescription">
-          <strong>{sunSignHoro.current_date}:</strong> &nbsp;
-          {sunSignHoro.description}
+          <strong>{horoscopeInfo.current_date}:</strong> &nbsp;
+          {horoscopeInfo.description}
         </div>
-        <div className="horoscopeContainers">
-          <div className="horoscopeItems">Mood:&nbsp;{sunSignHoro.mood}</div>
-          <div className="horoscopeItems">
-            Lucky Number:&nbsp;{sunSignHoro.lucky_number}
-          </div>
-          <div className="horoscopeItems">
-            Lucky Time:&nbsp;{sunSignHoro.lucky_time}
-          </div>
-          <div className="horoscopeItems">Color:&nbsp;{sunSignHoro.color}</div>
-          <div className="horoscopeItems">
+        <ul className="horoscopeContainers">
+          <li className="horoscopeItems">
             Compatibility
             <div className="horoCompatibility">
-              <img src="/piscesSVG.svg"></img>
-              {sunSignHoro.compatibility}
+              <img alt={"horoscope-sign"} src="/piscesSVG.svg"></img>
+              {horoscopeInfo.compatibility}
             </div>
-          </div>
-        </div>
+          </li>
+          <li className="horoscopeItems">Mood:&nbsp;{horoscopeInfo.mood}</li>
+          <li className="horoscopeItems">
+            Lucky Number:&nbsp;{horoscopeInfo.lucky_number}
+          </li>
+          <li className="horoscopeItems">Color:&nbsp;{horoscopeInfo.color}</li>
+        </ul>
       </div>
-      <div>{/* <PuffLoader size={150} color={"#F17D80"} /> */}</div>
-   
     </>
   );
 }
