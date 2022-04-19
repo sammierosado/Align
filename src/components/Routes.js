@@ -34,7 +34,7 @@ function Routes() {
           path={`/${h.url}`}
           render={(oldProps) => (
             <DailyHoroscope
-              sun_sign={h.sign}
+              sunSign={h.sign}
               date={days}
               {...oldProps}
               signs={horoscopeSigns}
