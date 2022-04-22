@@ -5,7 +5,12 @@ import "../App.css";
 function Nav() {
   return (
     <div className="navbar">
-      <Link to="/">AlignTheStars.com</Link>
+
+  
+      <Link to="/">
+      <img src="\star-logo.svg" height={50}/>
+      </Link>
+     
     </div>
   );
 }
