@@ -35,9 +35,17 @@ function DailyHoroscope({ sun_sign, signs, date }) {
   }
 
   const horoscopeInfo = sunSignHoro.filter((s) => s.date === currentDay)[0].data; //updates state for day horoscope info
+
+  // const imgUrl = "/" + String(sunSignHoro.compatibility) + "svg.svg";
+  // const imgUrl = "/geminisvg.svg";
+  const getImgUrl = (c) => {
+    const imgUrl = "/" + String(c) + "svg.svg";
+    return imgUrl
+  }
+
   return (
     <>
-    {/* HEADER */}
+      {/* HEADER */}
       <div className="horoscopeHeader">
         <div className="horoTitle">{sun_sign} Horoscope</div>
         <div className="dropdown">
@@ -45,21 +53,21 @@ function DailyHoroscope({ sun_sign, signs, date }) {
           <div className="dropdown-content">
             {signs.map((h, i) => (
               <a key={h.sign + i} href={`/${h.url}`}>
-                {h.sign}
+                {h.sign.toUpperCase()}
               </a>
             ))}
           </div>
         </div>
       </div>
 
-    {/*INFO*/}
+      {/*INFO*/}
       <div className="horoscopePage">
         <div className="changeDay">
           {date.map((d, i) => (
             <button
               key={d + i}
               onClick={() => setCurrentDay(d)}
-              className={d !== currentDay ? 'date-button button-active':'date-button'}
+              className={d !== currentDay ? 'date-button button-active' : 'date-button'}
             >
               {d}
             </button>
@@ -73,8 +81,10 @@ function DailyHoroscope({ sun_sign, signs, date }) {
           <li className="horoscopeItems">
             Compatibility
             <div className="horoCompatibility">
-              <img alt={"horoscope-sign"} src="/piscesSVG.svg"></img>
+
+              <img alt={"horoscope-sign"} src={getImgUrl(horoscopeInfo.compatibility)}></img>
               {horoscopeInfo.compatibility}
+
             </div>
           </li>
           <li className="horoscopeItems">Mood:&nbsp;{horoscopeInfo.mood}</li>

@@ -9,6 +9,12 @@ body {
   text-align: center;
 }
 
+.container {
+  border: solid grey 2px;
+  width: 40%;
+  border-radius: 5%;
+}
+
 .date-button{
   text-transform: uppercase;
   margin-right:1rem; 
