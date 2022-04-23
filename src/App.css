@@ -2,7 +2,16 @@ body {
   margin: 0;
   padding: 0;
   width: auto;
-  overflow: scroll 
+  overflow: hidden;
+  
+  /* hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+}
+/* hide scrollbar for chrome, safari and opera */
+.body::-webkit-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 .App {
