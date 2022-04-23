@@ -1,0 +1,50 @@
+[[redirects]]
+    from = "/aries-horoscope"
+    to = "https://alignthestars.netlify.app/aries-horoscope"
+    status = 301
+
+    from = "/taurus-horoscope"
+    to = "https://alignthestars.netlify.app/taurus-horoscope"
+    status = 301
+
+    from = "/gemini-horoscope"
+    to = "https://alignthestars.netlify.app/gemini-horoscope"
+    status = 301
+
+    from = "/cancer-horoscope"
+    to = "https://alignthestars.netlify.app/cancer-horoscope"
+    status = 301
+
+
+    from = "/leo-horoscope"
+    to = "https://alignthestars.netlify.app/leo-horoscope"
+    status = 301
+
+    from = "/virgo-horoscope"
+    to = "https://alignthestars.netlify.app/virgo-horoscope"
+    status = 301
+
+    from = "/libra-horoscope"
+    to = "https://alignthestars.netlify.app/libra-horoscope"
+    status = 301
+
+    from = "/scorpio-horoscope"
+    to = "https://alignthestars.netlify.app/scorpio-horoscope"
+    status = 301
+
+    from = "/sagittarius-horoscope"
+    to = "https://alignthestars.netlify.app/sagittarius-horoscope"
+    status = 301
+
+
+    from = "/capricorn-horoscope"
+    to = "https://alignthestars.netlify.app/capricorn-horoscope"
+    status = 301
+
+    from = "/aquarius-horoscope"
+    to = "https://alignthestars.netlify.app/aquarius-horoscope"
+    status = 301
+
+    from = "/pisces-horoscope"
+    to = "https://alignthestars.netlify.app/pisces-horoscope"
+    status = 301
