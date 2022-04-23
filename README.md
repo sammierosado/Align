@@ -13,4 +13,4 @@ run project "yarn start"
 
 HTML5, CSS3, JavaScript and React 
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5feb91b2-84c1-49f8-8dec-0db47399d6d3/deploy-status)](https://app.netlify.com/sites/alignthestars/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7e8eeddc-a643-457b-9e85-71fb93fce947/deploy-status)](https://app.netlify.com/sites/alignthestars/deploys)
