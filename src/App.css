@@ -60,7 +60,9 @@ body {
 
 .navbar a:hover,
 .navbar a.active {
-  background-color: #ddd;
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
 }
 
 .homepageTitle {
